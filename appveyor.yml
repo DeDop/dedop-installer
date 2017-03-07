@@ -1,9 +1,11 @@
 version: '0.0.1.dev.{build}'
 
 environment:
-  - PYTHON_LOC: "C:\\Miniconda35-x64"
-  - FRONTEND_VERSION: "0.0.1.dev"
-  - nodejs_version: "6.9.0"
+  global:
+    PYTHON_LOC: "C:\\Miniconda35-x64"
+    FRONTEND_VERSION: "0.0.1.dev"
+  nodejs_version: "6.9.0"
+  apiUrl : "https://ci.appveyor.com/api"
 
 cache:
   - node_modules -> package.json
