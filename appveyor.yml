@@ -2,7 +2,6 @@ version: '0.5.4.dev.{build}'
 
 environment:
   global:
-    # Example can be found here https://github.com/quantopian/zipline/blob/master/appveyor.yml
     PYTHON_LOC: "C:\\Miniconda35-x64"
     INSTALLER_VERSION: "0.5.4.dev"
 
@@ -14,6 +13,10 @@ install:
 build_script:
   - cmd: constructor installer
 
+artifacts:
+  - path: 'DeDop*.exe'
+    name: installer
+
 deploy:
   - provider: FTP
     protocol: ftp
@@ -21,6 +24,6 @@ deploy:
     username: dedop
     password:
       secure: GL7E4cOZi9mzFvaDMAVOaQ==
-    artifact: /DeDop.*\.exe/
+    artifact: installer
     folder: win64
     debug: true
