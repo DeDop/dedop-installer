@@ -45,7 +45,7 @@ script:
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
   - ls -al
   - ls -al dedop-studio
-  - mkdir backend-installer && cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
+  - mkdir -p dedop-studio/app/backend-installer && cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
   - cd dedop-studio
   - ls -al app/backend-installer
   - npm run dist
