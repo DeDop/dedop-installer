@@ -1,4 +1,4 @@
-language: generic
+language: node_js
 
 env:
   global:
@@ -12,6 +12,13 @@ env:
 os:
   - linux
   - osx
+
+node_js:
+  - "6"
+
+cache:
+  directories:
+    - node_modules
 
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -27,11 +34,28 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
   - conda create -q -n constructor-environment python=$CONDA_PY constructor
-  - source activate constructor-environment
+  - git clone https://github.com/DeDop/dedop-studio.git
+  - cd dedop-studio
+  - npm install
+  - cd $TRAVIS_BUILD_DIR
 
 script:
+  - source activate constructor-environment
   - constructor installer
+  - CONDA_INSTALLER_FILE="DeDop-*.sh"
+  - ls -al
+  - ls -al dedop-studio
+  - mkdir backend-installer && cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
+  - cd dedop-studio
+  - ls -al app/backend-installer
+  - npm run dist
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      FRONTEND_INSTALLER_FILE="dedop-studio/dist/mac/DeDop*.dmg";
+    else
+      FRONTEND_INSTALLER_FILE="dedop-studio/dist/dedop-studio*.AppImage";
+    fi
+  - cd $TRAVIS_BUILD_DIR
 
 after_success:
-  - INSTALLER_FILE=DeDop*.sh
-  - "curl --ftp-create-dirs -T $INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
+  - "curl --ftp-create-dirs -T $CONDA_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
+  - "curl --ftp-create-dirs -T $FRONTEND_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
