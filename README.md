@@ -1,6 +1,6 @@
 # dedop-installer
 
-## Anaconda installer
+## Back-end installer
 
 ### Building the installer
 
@@ -17,3 +17,7 @@ Build Anaconda installer `dedop` (see `installer/construct.yaml`):
 
     cd dedop-conda
     constructor installer
+    
+## Front-end installer
+
+TODO: add documentation
