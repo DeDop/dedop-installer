@@ -1,21 +1,44 @@
-version: '0.5.4.dev.{build}'
+version: '0.0.1.dev.{build}'
 
 environment:
-  global:
-    PYTHON_LOC: "C:\\Miniconda35-x64"
-    INSTALLER_VERSION: "0.5.4.dev"
+  - PYTHON_LOC: "C:\\Miniconda35-x64"
+  - FRONTEND_VERSION: "0.0.1.dev"
+  - nodejs_version: "6.9.0"
+
+cache:
+  - node_modules -> package.json
 
 install:
   - cmd: call %PYTHON_LOC%\Scripts\activate.bat
   - cmd: conda config --set always_yes yes --set changeps1 no
   - cmd: conda install -y constructor
+  # now the frontend build
+  - cmd: git clone https://github.com/DeDop/dedop-studio.git
+  - cmd: cd dedop-studio
+  - ps: $apiUrl
+  - ps: Install-Product node $env:nodejs_version
+  - cmd: npm install npm
+  - cmd: .\node_modules\.bin\npm install
 
 build_script:
   - cmd: constructor installer
+  - ps: CONDA_INSTALLER_FILE="DeDop-*.exe"
+  - cmd: mkdir dedop-studio/app/backend-installer
+  - ps: cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
+  - cmd: cd dedop-studio
+  - cmd: .\node_modules\.bin\npm run dist
+  - ps: ls -al $APPVEYOR_BUILD_FOLDER
+  - ps: cd $APPVEYOR_BUILD_FOLDER
+
+after_build:
+  - move dedop-studio/dist win64
+  - ps: cp $CONDA_INSTALLER_FILE win64
 
 artifacts:
-  - path: 'DeDop*.exe'
-    name: installer
+  - path: 'win64\DeDop*.exe'
+    name: dedop-conda-installer-exe
+  - path: 'win64\dedop-studio*.exe'
+    name: dedop-studio-installer-exe
 
 deploy:
   - provider: FTP
