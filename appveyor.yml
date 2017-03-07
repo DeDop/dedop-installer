@@ -1,25 +1,18 @@
-version: '0.5.4.dev1.{build}'
+version: '0.5.4.dev.{build}'
 
 environment:
   global:
     # Example can be found here https://github.com/quantopian/zipline/blob/master/appveyor.yml
-    ANACONDA_TOKEN:
-      secure: "8Wuonn7zuZIDXX26rNMQ+ivY6msM56v7d0TNUpQ7rUy291IxaW88aWDEPYDthTZ8"
     PYTHON_LOC: "C:\\Miniconda35-x64"
-    INSTALLER_VERSION: "0.5.4.dev1"
+    INSTALLER_VERSION: "0.5.4.dev"
 
 install:
   - cmd: call %PYTHON_LOC%\Scripts\activate.bat
   - cmd: conda config --set always_yes yes --set changeps1 no
-  - cmd: conda install -y conda-build constructor anaconda-client
+  - cmd: conda install -y constructor
 
 build_script:
-  - cmd: conda build -c ccitools recipe
   - cmd: constructor installer
-
-deploy_script:
-  - cmd: anaconda -v -t %ANACONDA_TOKEN% upload "%PYTHON_LOC%\conda-bld\win-64\dedop*.tar.bz2" -u dedop --force
-  #- cmd: anaconda -v -t %ANACONDA_TOKEN% upload --user dedop --package dedop-installer --package-type file --version %INSTALLER_VERSION% "DeDop*.exe" --force
 
 deploy:
   - provider: FTP
