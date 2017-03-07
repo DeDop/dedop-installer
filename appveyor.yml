@@ -25,7 +25,7 @@ install:
 
 build_script:
   - cmd: constructor installer
-  - ps: CONDA_INSTALLER_FILE="DeDop-*.exe"
+  - ps: $CONDA_INSTALLER_FILE="DeDop-*.exe"
   - cmd: mkdir dedop-studio/app/backend-installer
   - ps: cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
   - cmd: cd dedop-studio
