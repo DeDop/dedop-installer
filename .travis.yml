@@ -1,0 +1,39 @@
+language: generic
+
+env:
+  global:
+    - CONDA_PY=3.5
+    #  the following key was generated in 2 steps based on the example here https://github.com/quantopian/zipline/blob/master/.travis.yml
+    # ANACONDA_TOKEN
+    - secure: "LbdHrvf1y+B/pOSqbM5z3FJa6hHbja1zLP3lp7Wbh/9RMua65FoSj+yXiULi0zLmLT1fTEuDKdWkHXgFiWyIawN5Wb/xBNc7UuJi5L2ko0WPs0UxUn6/vzj+rdmAp7lLSJldELWTyDUpnactkLD/HO43LwKW7IGsXas6U1gzjws9LlX4RoAAGfRyPalSWDEA6+/AYmpofmBNCgktqdmDi+zq5wif9X7JTPtVMllW81NLSQqzJvSYzT6EyONFLTJh8bd9FzOeyrR90MahQo8HjVSXAA0yp1qxJGtJtlRLaMIr+Xz7sec/rfIjvT8Vob8ZeAas38uuU5mAg4UgUTidQRYwZZIv4V0dFIY8eMhSruSTP6vReewT2nGSDwGVhENoW+JFVZj2BQ92t81ml6FGhMN/03nrUd7FqH6/W30AjwqAXtYa6GKM3qcMPu1gPr25Y6D8Z1ybYaCkWaD5gRZTc2G67cb1TBxzh3scgMPuJtxYidPLPAjMXy2uFKOrV6o0ZCCztT3TOWUhQ2XQHRpj5hGsjIMWH6zcPHavAcYJZ2xSROkXrSlNyFluSlKnhl2Ix1EjvUYII60cHwIlqc7HprjNp4CsUBdmBWWy7A176Ph6oMuKvf535J27BNKViVOWYHxIx7O8MBP/MxMDHCSHyqedOcwwj6dEI/mSAC3chnU="
+    - FTP_USER=dedop
+    # FTP_PASSWORD
+    - secure: "nMIR+tLGIm9kTpPU0v2AFPil3tNoLlT+8Xdum1VCGNVFQU6VAVd1fBJk+77uytMVyMulapEPYl2lwq/TEM35TWofVeIi+6NxdWH2GBdlZgeEqyppbNirxsK638RVR1CNR4euA/pNVABEk3NUJoVMEWo/ztbW30SPOoDRxSFkuvqblj6CDfrxLgfy1TJ+swiUdqfuu+e7FkfNivOckM2J1UIntz8PUhZQKmfP/Z6ybQuZax5XFSvNMbuP7pOPlDdynSAxhqlg9m2qoJeUhDi+UKFzg1sT2SUotZXaAJMEdfigI4YMXkdv+izH7bQgv/lzYOsfyX1RpLvb8A6mT2mp7HfJ5UuqlcW6HUIjebiTE3qGgJ5XvvnO/eePmBhcGB7z8z/C1MbDU9/uYLERK2pkppGi+5J8STFuIyy+Sqp1nijkU8uEbex0RzZ7HG8z0OcqUEKHSktcPiG0o9HlioL6haa+KxywawJ/3Dh+g8E0+h90/LTQLYMYDUTyCS0RTD5lQDJlkvL7i7ALWZB1grl24OonHvM3hHPKvY/5EUnfwzrEucRDEEXZaKODdYuJiJZd1bTpN9zUhOnDtFnHHmei+KdtMt97c6uyELacInNJX01I2JWj0aSzy6LE4Y/uRsiiARHxD+B1Evf4bWZE8Pbqf+o0vThvQl4eP2/EuXAtifQ="
+    - INSTALLER_VERSION="0.5.4.dev"
+
+os:
+  - linux
+  - osx
+
+install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+  - conda create -q -n constructor-environment python=$CONDA_PY constructor
+  - source activate constructor-environment
+
+script:
+  - constructor installer
+
+after_success:
+  - INSTALLER_FILE=DeDop*.sh
+  - "curl --ftp-create-dirs -T $INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"

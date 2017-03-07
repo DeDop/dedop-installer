@@ -1,0 +1,31 @@
+name: DeDop
+version: 0.5.4.dev
+
+channels:
+  - http://repo.continuum.io/pkgs/free/
+  - https://conda.anaconda.org/ccitools
+  - https://conda.anaconda.org/dedop
+
+specs:
+  - python >=3.5,<3.6
+  - cate-util 0.7.0* # need to be modified to using '>' or '<' after there is an official release of this lib
+  - dedop
+  - conda
+  - jupyter
+  - numpy
+  - numexpr
+  - scipy
+  - netcdf4
+  # dedop.ui.analysis only:
+  - pyproj
+  - matplotlib
+  - bokeh
+  - ipywidgets
+  - pyqt
+
+license_file: ../LICENSE
+
+# Welcome image for Windows installer
+welcome_image: welcome_162x314.png
+header_image: header_150x57.png
+icon_image: icon_256x256.png
