@@ -30,7 +30,7 @@ build_script:
   - ps: cp $CONDA_INSTALLER_FILE dedop-studio\app\backend-installer
   - cmd: cd dedop-studio
   - cmd: .\node_modules\.bin\npm run dist
-  - ps: ls -al $APPVEYOR_BUILD_FOLDER
+  - ps: ls $APPVEYOR_BUILD_FOLDER
   - ps: echo $APPVEYOR_BUILD_FOLDER
   - ps: cd ..
 
