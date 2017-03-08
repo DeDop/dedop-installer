@@ -51,6 +51,5 @@ deploy:
     username: dedop
     password:
       secure: GL7E4cOZi9mzFvaDMAVOaQ==
-    artifact: installer
     folder: win64
     debug: true
