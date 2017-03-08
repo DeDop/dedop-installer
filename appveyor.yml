@@ -25,9 +25,9 @@ install:
 
 build_script:
   - cmd: constructor installer
-  - ps: $CONDA_INSTALLER_FILE="DeDop-*.exe"
+  - ps: $CONDA_INSTALLER_FILE="DeDop*.exe"
   - cmd: mkdir dedop-studio\app\backend-installer
-  - ps: cp $CONDA_INSTALLER_FILE dedop-studio\app\backend-installer\$CONDA_INSTALLER_FILE
+  - ps: cp $CONDA_INSTALLER_FILE dedop-studio\app\backend-installer
   - cmd: cd dedop-studio
   - cmd: .\node_modules\.bin\npm run dist
   - ps: ls -al $APPVEYOR_BUILD_FOLDER
