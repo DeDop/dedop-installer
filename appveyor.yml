@@ -51,5 +51,4 @@ deploy:
     username: dedop
     password:
       secure: GL7E4cOZi9mzFvaDMAVOaQ==
-    folder: win64
     debug: true
