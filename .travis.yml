@@ -43,11 +43,8 @@ script:
   - source activate constructor-environment
   - constructor installer
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
-  - ls -al
-  - ls -al dedop-studio
   - mkdir -p dedop-studio/app/backend-installer && cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
   - cd dedop-studio
-  - ls -al app/backend-installer
   - npm run dist
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       FRONTEND_INSTALLER_FILE="dedop-studio/dist/mac/DeDop*.dmg";
