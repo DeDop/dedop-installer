@@ -7,8 +7,10 @@ environment:
   nodejs_version: "6.9.0"
   apiUrl : "https://ci.appveyor.com/api"
 
-cache:
-  - dedop-studio\node_modules -> package.json
+# commented out for now because it creates problem when cloning the dedop-studio on the next build (dedop-studio directory
+# already exists)
+#cache:
+#  - dedop-studio\node_modules -> package.json
 
 install:
   - cmd: call %PYTHON_LOC%\Scripts\activate.bat
