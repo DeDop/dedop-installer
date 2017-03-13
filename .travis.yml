@@ -43,7 +43,7 @@ script:
   - source activate constructor-environment
   - constructor installer
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
-  - mkdir -p dedop-studio/app/backend-installer && cp $CONDA_INSTALLER_FILE dedop-studio/app/backend-installer/$CONDA_INSTALLER_FILE
+  - cp $CONDA_INSTALLER_FILE dedop-studio/app/$CONDA_INSTALLER_FILE
   - cd dedop-studio
   - npm run dist
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
