@@ -2,14 +2,15 @@ name: DeDop
 version: 0.5.4.dev
 
 channels:
+  - http://conda.anaconda.org/conda-forge
   - http://repo.continuum.io/pkgs/free/
   - https://conda.anaconda.org/ccitools
   - https://conda.anaconda.org/dedop
 
 specs:
-  - python >=3.5,<3.6
+  - python 3.5*
   - cate-util 0.7.0.dev1* # need to be modified to using '>' or '<' after there is an official release of this lib
-  - dedop
+  - dedop 0.5.4.dev*
   - conda
   - jupyter
   - numpy
