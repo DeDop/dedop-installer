@@ -21,8 +21,8 @@ install:
   - cmd: cd dedop-studio
   - ps: $apiUrl
   - ps: Install-Product node $env:nodejs_version
-  - cmd: npm install npm
-  - cmd: .\node_modules\.bin\npm install
+  - cmd: npm install -g npm
+  - cmd: npm install
   - cd ..
 
 build_script:
@@ -30,7 +30,7 @@ build_script:
   - ps: $CONDA_INSTALLER_FILE="DeDop*.exe"
   - ps: cp $CONDA_INSTALLER_FILE dedop-studio\app
   - cmd: cd dedop-studio
-  - cmd: .\node_modules\.bin\npm run dist
+  - cmd: npm run dist
   - ps: ls $APPVEYOR_BUILD_FOLDER
   - ps: echo $APPVEYOR_BUILD_FOLDER
   - ps: cd ..
