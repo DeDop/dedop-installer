@@ -28,7 +28,8 @@ install:
 build_script:
   - cmd: constructor installer
   - ps: $CONDA_INSTALLER_FILE="DeDop*.exe"
-  - ps: cp $CONDA_INSTALLER_FILE dedop-studio\app
+  # bundled installer not yet used
+  #- ps: cp $CONDA_INSTALLER_FILE dedop-studio\app
   - cmd: cd dedop-studio
   - cmd: npm run dist
   - ps: ls $APPVEYOR_BUILD_FOLDER
@@ -37,8 +38,6 @@ build_script:
 
 after_build:
   - move dedop-studio\dist win64
-  - ps: ls win64
-  - ps: ls win64\win-unpacked
   - ps: cp $CONDA_INSTALLER_FILE win64
 
 artifacts:
