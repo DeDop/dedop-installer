@@ -37,6 +37,8 @@ build_script:
 
 after_build:
   - move dedop-studio\dist win64
+  - ps: ls win64
+  - ps: ls win64\win-unpacked
   - ps: cp $CONDA_INSTALLER_FILE win64
 
 artifacts:
