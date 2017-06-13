@@ -13,9 +13,9 @@ specs:
   - dedop
   - conda
   - jupyter
-  - numpy
+  - numpy 1.11.3 py35_0 # so that it does not use the open_blas version, which does not work in MacOS
   - numexpr
-  - scipy
+  - scipy 0.19.0 np111py35_0 # so that it does not use the open_blas version
   - netcdf4
   # dedop.ui.analysis only:
   - pyproj
