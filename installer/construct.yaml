@@ -9,7 +9,7 @@ channels:
 
 specs:
   - python >=3.5,<3.6
-  - cate-util 0.8.0* # need to be modified to using '>' or '<' after there is an official release of this lib
+  - cate-util 0.8.0rc3 np111py35_0 # need to be modified to using '>' or '<' after there is an official release of this lib
   - dedop
   - conda
   - jupyter
