@@ -9,7 +9,7 @@ ls -lR dedop-studio/dist/
 
 # core
 
-upload_ftp "miniconda" "$CONDA_INSTALLER_FILE"
+upload_ftp "miniconda" "DeDop-backend*.sh"
 
 # desktop
 
