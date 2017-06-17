@@ -1,9 +1,9 @@
-version: '0.0.1.dev.{build}'
+version: '1.0.0.{build}'
 
 environment:
   global:
     PYTHON_LOC: "C:\\Miniconda35-x64"
-    FRONTEND_VERSION: "0.0.1.dev"
+    FRONTEND_VERSION: "1.0.0"
   nodejs_version: "6.9.0"
   apiUrl : "https://ci.appveyor.com/api"
 

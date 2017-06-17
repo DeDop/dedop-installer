@@ -1,5 +1,5 @@
 #!/bin/sh
 
-VERSION="0.5.4.dev"
+VERSION="1.0.0"
 mkdir -p ${HOME}/.dedop/${VERSION}
 echo ${PREFIX} > ${HOME}/.dedop/${VERSION}/dedop.location
