@@ -5,6 +5,8 @@ function upload_ftp {
     curl --ftp-create-dirs -T $2 -u "$FTP_USER:$FTP_PASSWORD" "ftp://$FTP_HOST/$TRAVIS_OS_NAME/"
 }
 
+ls -lR dedop-studio/dist/
+
 # core
 
 upload_ftp "miniconda" "$CONDA_INSTALLER_FILE"
