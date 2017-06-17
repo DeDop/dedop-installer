@@ -20,6 +20,9 @@ cache:
   directories:
     - node_modules
 
+before_install:
+ - chmod +x upload-to-ftp.sh
+
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
@@ -56,6 +59,6 @@ after_success:
   #- "curl --ftp-create-dirs -T $CONDA_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
   #- "curl --ftp-create-dirs -T $FRONTEND_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_EVENT_TYPE" = "push" ]; then
-      ls -lR;
+      ls -l;
       ./upload-to-ftp.sh;
     fi
