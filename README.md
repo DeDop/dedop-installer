@@ -9,9 +9,6 @@ Install `constructor` in your root Miniconda:
     source activate
     conda install constructor
 
-Clone this repo:
-
-    git clone https://github.com/DeDop/dedop-conda.git
 
 Build Anaconda installer `dedop` (see `installer/construct.yaml`):
 
@@ -20,4 +17,7 @@ Build Anaconda installer `dedop` (see `installer/construct.yaml`):
     
 ## Front-end installer
 
-TODO: add documentation
+* Install [nodejs 6](https://nodejs.org/en/download/) (higher version may work, but not yet tested)
+* `git clone https://github.com/DeDop/dedop-studio.git`
+* `cd dedop-studio`
+* `npm run dist`
