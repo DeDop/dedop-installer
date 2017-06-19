@@ -7,11 +7,11 @@ IMPORTANT: Install DeDop-backend before installing DeDop-studio
 ### Install DeDop-backend
 
 For Windows:
-* Download installer file `DeDop-backend-1.0.0-Windows-x86_64.exe`
+* Download installer file **DeDop-backend-1.0.0-Windows-x86_64.exe**
 * Execute the installer
 
 For Linux/MacOS
-* Download installer file `DeDop-backend-1.0.0-Linux-x86_64.sh` or `DeDop-backend-1.0.0-MacOSX-x86_64.sh`
+* Download installer file **DeDop-backend-1.0.0-Linux-x86_64.sh** or **DeDop-backend-1.0.0-MacOSX-x86_64.sh**
 * `chmod +x DeDop-backend-1.0.0-[MacOSX|Linux]-x86_64.sh`
 * `./DeDop-backend-1.0.0-[MacOSX|Linux]-x86_64.sh`
 
