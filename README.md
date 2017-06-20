@@ -24,6 +24,7 @@ For Windows:
 For Linux:
 * with AppImage file
   * Download AppImage file **DeDop-studio-1.0.0-x86_64.AppImage**
+  * `chmod +x DeDop-studio-1.0.0-x86_64.AppImage`
   * Run the AppImage file
 * with tar.gz file
   * Download tar.gz file **DeDop-studio-1.0.0.tar.gz**
