@@ -2,18 +2,18 @@
 
 ## Install DeDop with installer
 
-IMPORTANT: Install DeDop-backend before installing DeDop-studio
+IMPORTANT: Install DeDop-core before installing DeDop-studio
 
-### Install DeDop-backend
+### Install DeDop-core
 
 For Windows:
-* Download installer file **DeDop-backend-1.0.0-Windows-x86_64.exe**
+* Download installer file **DeDop-core-1.0.0-Windows-x86_64.exe**
 * Execute the installer
 
 For Linux/MacOS
-* Download installer file **DeDop-backend-1.0.0-Linux-x86_64.sh** or **DeDop-backend-1.0.0-MacOSX-x86_64.sh**
-* `chmod +x DeDop-backend-1.0.0-[MacOSX|Linux]-x86_64.sh`
-* `./DeDop-backend-1.0.0-[MacOSX|Linux]-x86_64.sh`
+* Download installer file **DeDop-core-1.0.0-Linux-x86_64.sh** or **DeDop-core-1.0.0-MacOSX-x86_64.sh**
+* `chmod +x DeDop-core-1.0.0-[MacOSX|Linux]-x86_64.sh`
+* `./DeDop-core-1.0.0-[MacOSX|Linux]-x86_64.sh`
 
 ### Install DeDop-studio
 
@@ -44,7 +44,7 @@ For Mac:
   * `unzip DeDop-studio-1.0.0-mac.zip -d dedop-studio`
   * `cd dedop-studio && open DeDop-studio.app`
 
-## Build back-end installer
+## Build DeDop-core installer
 
 Install `constructor` in your root Miniconda:
 
