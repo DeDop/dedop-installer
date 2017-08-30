@@ -16,7 +16,7 @@ specs:
   - numpy 1.11.3 py35_0 # so that it does not use the open_blas version, which does not work in MacOS
   - numexpr
   - scipy 0.19.0 np111py35_0 # so that it does not use the open_blas version
-  - netcdf4
+  - netcdf4 1.2.9 np111py35_0 # netcdf4 1.2.9 py35_0 gave DLL missing error in Windows
   # dedop.ui.analysis only:
   - pyproj
   - matplotlib
