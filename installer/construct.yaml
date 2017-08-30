@@ -27,6 +27,7 @@ specs:
   # https://github.com/conda/constructor/issues/92
   # pin to 2017.0.1 for time being
   - mkl 2017.0.1
+  - krb5 1.14.2 # to fix DLL missing error while importing netCDF4 in Windows
 
 license_file: ../LICENSE
 
