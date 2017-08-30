@@ -23,6 +23,10 @@ specs:
   - bokeh
   - ipywidgets
   - pyqt
+  # mkl 2017.0.3 on windows breaks the installer
+  # https://github.com/conda/constructor/issues/92
+  # pin to 2017.0.1 for time being
+  - mkl 2017.0.1
 
 license_file: ../LICENSE
 
