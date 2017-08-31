@@ -17,7 +17,7 @@ install:
   - cmd: conda config --set always_yes yes --set changeps1 no
   - cmd: conda install -y constructor
   # now the frontend build
-  - cmd: git clone https://github.com/DeDop/dedop-studio.git
+  - cmd: git clone https://github.com/DeDop/dedop-studio.gits
   - cmd: git checkout -b graphic_card_issue
   - cmd: cd dedop-studio
   - ps: $apiUrl

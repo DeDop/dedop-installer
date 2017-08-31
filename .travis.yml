@@ -59,7 +59,4 @@ script:
 after_success:
   #- "curl --ftp-create-dirs -T $CONDA_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
   #- "curl --ftp-create-dirs -T $FRONTEND_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
-  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_EVENT_TYPE" = "push" ]; then
-      ls -l;
-      ./upload-to-ftp.sh;
-    fi
+  - ./upload-to-ftp.sh;
