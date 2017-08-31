@@ -39,7 +39,7 @@ install:
   - conda create -q -n constructor-environment python=$CONDA_PY constructor
   - git clone https://github.com/DeDop/dedop-studio.git
   - cd dedop-studio
-  - git checkout -b graphic_card_issue
+  - git checkout graphic_card_issue
   - npm install
   - cd $TRAVIS_BUILD_DIR
 
