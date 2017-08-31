@@ -1,5 +1,5 @@
 name: DeDop-core
-version: 1.0.0
+version: 1.0.1.dev.1
 
 channels:
   - http://conda.anaconda.org/conda-forge
