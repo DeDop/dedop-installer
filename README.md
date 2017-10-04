@@ -7,7 +7,7 @@ IMPORTANT: Install DeDop-core before installing DeDop-studio
 ### Install DeDop-core
 
 For Windows:
-* Download installer file **DeDop-core-1.1.0-Windows-x86_64.exe** from [here](https://github.com/DeDop/dedop-core/releases/download/v1.1.0/DeDop-core-1.1.0-Windows-x86_64.exe)
+* Download installer file [**DeDop-core-1.1.0-Windows-x86_64.exe**](https://github.com/DeDop/dedop-core/releases/download/v1.1.0/DeDop-core-1.1.0-Windows-x86_64.exe)
 * Execute the installer
 
 For Linux/MacOS
