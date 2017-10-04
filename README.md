@@ -11,36 +11,36 @@ For Windows:
 * Execute the installer
 
 For Linux/MacOS
-* Download installer file **DeDop-core-1.1.0-Linux-x86_64.sh** or **DeDop-core-1.1.0-MacOSX-x86_64.sh** from [here](https://github.com/DeDop/dedop-core/releases/tag/v1.1.0)
+* Download installer file [**DeDop-core-1.1.0-Linux-x86_64.sh**](https://github.com/DeDop/dedop-core/releases/download/v1.1.0/DeDop-core-1.1.0-Linux-x86_64.sh) or [**DeDop-core-1.1.0-MacOSX-x86_64.sh**](https://github.com/DeDop/dedop-core/releases/download/v1.1.0/DeDop-core-1.1.0-MacOSX-x86_64.sh)
 * `chmod +x DeDop-core-1.1.0-[MacOSX|Linux]-x86_64.sh`
 * `./DeDop-core-1.1.0-[MacOSX|Linux]-x86_64.sh`
 
 ### Install DeDop-studio
 
 For Windows:
-* Download installer file **DeDop-studio-1.1.0-win.exe** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-win.exe)
+* Download installer file [**DeDop-studio-1.1.0-win.exe**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-win.exe)
 * Execute the installer
 
 For Linux:
 * with AppImage file
-  * Download AppImage file **DeDop-studio-1.1.0-x86_64.AppImage** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-x86_64.AppImage)
+  * Download AppImage file [**DeDop-studio-1.1.0-x86_64.AppImage**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-x86_64.AppImage)
   * `chmod +x DeDop-studio-1.1.0-x86_64.AppImage`
   * Run the AppImage file
 * with tar.gz file
-  * Download tar.gz file **DeDop-studio-1.1.0.tar.gz** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.tar.gz)
+  * Download tar.gz file [**DeDop-studio-1.1.0.tar.gz**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.tar.gz)
   * `tar -xzf DeDop-studio-1.1.0.tar.gz`
   * `./DeDop-studio-1.1.0/dedop-studio`
 * with zip file
-  * Download zip file **DeDop-studio-1.1.0.zip** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.zip)
+  * Download zip file [**DeDop-studio-1.1.0.zip**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.zip)
   * `unzip DeDop-studio-1.1.0.zip`
   * `./linux-unpacked/dedop-studio`
 
 For Mac:
 * with dmg file
-  * Download dmg file **DeDop-studio-1.1.0.dmg** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.dmg)
+  * Download dmg file [**DeDop-studio-1.1.0.dmg**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0.dmg)
   * Run the dmg file
 * with zip file
-  * Download zip file **DeDop-studio-1.1.0-mac.zip** from [here](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-mac.zip)
+  * Download zip file [**DeDop-studio-1.1.0-mac.zip**](https://github.com/DeDop/dedop-studio/releases/download/v1.1.0/DeDop-studio-1.1.0-mac.zip)
   * `unzip DeDop-studio-1.1.0-mac.zip -d dedop-studio`
   * `cd dedop-studio && open DeDop-studio.app`
 
