@@ -20,8 +20,8 @@ specs:
   # dedop.ui.analysis only:
   - pyproj
   - matplotlib
-  - bokeh
-  - ipywidgets
+  - bokeh ==0.12.7 # bokeh 0.12.9 has some changes that make it incompatible with some code in the notebooks
+  - ipywidgets >=6.0.0,<7 # ipywidgets 7 makes it not importable in the notebook. Possible some other dependencies are required
   - pyqt
   # mkl 2017.0.3 on windows breaks the installer
   # https://github.com/conda/constructor/issues/92
