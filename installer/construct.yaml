@@ -1,5 +1,5 @@
 name: DeDop-core
-version: 1.2.0.dev1
+version: 1.2.0
 
 channels:
   - http://conda.anaconda.org/conda-forge
@@ -10,7 +10,7 @@ channels:
 specs:
   - python >=3.5,<3.6
   - cate-util 0.8.0rc3 # need to be modified to using '>' or '<' after there is an official release of this lib
-  - dedop 1.2.0.dev1 py35_0
+  - dedop 1.2.0 py35_0
   - conda
   - jupyter
   - numpy 1.11.3 py35_0 # so that it does not use the open_blas version, which does not work in MacOS
