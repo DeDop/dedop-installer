@@ -28,7 +28,7 @@ specs:
   # mkl 2017.0.3 on windows breaks the installer
   # https://github.com/conda/constructor/issues/92
   # pin to 2017.0.1 for time being
-  - mkl 2018.0.0    # [win]
+  - mkl >=2018.0.1    # [win]
   - krb5 1.14.2 # to fix DLL missing error while importing netCDF4 in Windows
 
 license_file: ../LICENSE
