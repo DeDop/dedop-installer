@@ -48,16 +48,9 @@ script:
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
   - cd dedop-studio
   - npm run dist
-  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-  #    FRONTEND_INSTALLER_FILE="dedop-studio/dist/mac/DeDop*.dmg";
-  #  else
-  #    FRONTEND_INSTALLER_FILE="dedop-studio/dist/DeDop-studio*.AppImage";
-  #  fi
   - cd $TRAVIS_BUILD_DIR
 
 after_success:
-  #- "curl --ftp-create-dirs -T $CONDA_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
-  #- "curl --ftp-create-dirs -T $FRONTEND_INSTALLER_FILE -u $FTP_USER:$FTP_PASSWORD ftp://ftp.brockmann-consult.de/$TRAVIS_OS_NAME/"
   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_EVENT_TYPE" = "push" ]; then
       ls -l;
       ./upload-to-ftp.sh;
