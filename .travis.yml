@@ -36,14 +36,16 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - conda install python=$CONDA_PY constructor
+  # use older version of constructor because the new one (eg. v2.x.x) requires it to be installed on conda root env
+  # This in turn created a problem in travis linux build when downgrading root env to use python 3.5.
+  - conda create -q -n constructor-environment python=$CONDA_PY constructor=1.5.5
   - git clone https://github.com/DeDop/dedop-studio.git
   - cd dedop-studio
   - npm install
   - cd $TRAVIS_BUILD_DIR
 
 script:
-  - source activate
+  - source activate constructor-environment
   - constructor installer
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
   - cd dedop-studio
