@@ -21,8 +21,10 @@ specs:
   - pyproj
   - matplotlib
   - bokeh ==0.12.7 # bokeh 0.12.9 has some changes that make it incompatible with some code in the notebooks
-  - ipywidgets >=6.0.0,<7 # ipywidgets 7 makes it not importable in the notebook. Possible some other dependencies are required
-  - widgetsnbextension >=2.0.1
+  # ipywidgets 7 makes it not importable in the notebook. Possible some other dependencies are required
+  # maybe ipywidgets 6.0.0 causes post-link issue when installing in linux
+  # https://github.com/conda-forge/widgetsnbextension-feedstock/issues/4
+  - ipywidgets >=6.0.1,<7
   - pyqt
   # mkl 2017.0.3 on windows breaks the installer
   # https://github.com/conda/constructor/issues/92
