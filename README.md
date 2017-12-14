@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/DeDop/dedop-installer.svg?branch=v1.0.0)](https://travis-ci.org/DeDop/dedop-installer)
+[![Build status](https://ci.appveyor.com/api/projects/status/1fmc1wp6pwtnfnnv/branch/master?svg=true)](https://ci.appveyor.com/project/hans-permana/dedop-installer/branch/master)
+
 # dedop-installer
 
 ## Install DeDop with installer
