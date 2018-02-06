@@ -9,12 +9,12 @@ channels:
   - https://conda.anaconda.org/anaconda
 
 specs:
-  - python ==3.6
+  - python ==3.6.4
   - cate-util 1.0.0.dev1 py36_0 # need to be modified to using '>' or '<' after there is an official release of this lib
   - dedop 1.4.0.dev1 py36_0
   - conda
   - jupyter ==1.0.0
-  - numpy 1.11.3 py36_0 # so that it does not use the open_blas version, which does not work in MacOS
+  - numpy 1.11.3 # so that it does not use the open_blas version, which does not work in MacOS
   - numexpr
   - scipy ==1.0.0  # so that it does not use the open_blas version
   - netcdf4 ==1.2.4 # netcdf4 1.2.9 py35_0 gave DLL missing error in Windows
@@ -42,3 +42,9 @@ post_install: post-install.bat           [win]
 welcome_image: welcome_162x314.png
 header_image: header_150x57.png
 icon_image: icon_256x256.png
+
+# Without the next setting we get:
+#   Checking for duplicate files ...
+#   Error: File 'Library/COPYING' found in multiple packages: hdf4-4.2.13-vc14_0.tar.bz2, hdf5-1.10.1-vc14_1.tar.bz2
+# See https://github.com/conda/constructor/issues/132
+ignore_duplicate_files: True
