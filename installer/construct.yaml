@@ -1,36 +1,37 @@
 name: DeDop-core
-version: 1.3.0
+version: 1.4.0.dev1
 
 channels:
   - http://conda.anaconda.org/conda-forge
   - http://repo.continuum.io/pkgs/free/
   - https://conda.anaconda.org/ccitools
   - https://conda.anaconda.org/dedop
+  - https://conda.anaconda.org/anaconda
 
 specs:
-  - python >=3.5,<3.6
-  - cate-util 0.8.0rc3 # need to be modified to using '>' or '<' after there is an official release of this lib
-  - dedop 1.3.0 py35_0
+  - python ==3.6
+  - cate-util 1.0.0.dev1 py36_0 # need to be modified to using '>' or '<' after there is an official release of this lib
+  - dedop 1.4.0.dev1 py36_0
   - conda
-  - jupyter
-  - numpy 1.11.3 py35_0 # so that it does not use the open_blas version, which does not work in MacOS
+  - jupyter ==1.0.0
+  - numpy 1.11.3 py36_0 # so that it does not use the open_blas version, which does not work in MacOS
   - numexpr
-  - scipy 0.19.0 np111py35_0 # so that it does not use the open_blas version
-  - netcdf4 1.2.9 np111py35_0 # netcdf4 1.2.9 py35_0 gave DLL missing error in Windows
+  - scipy ==1.0.0  # so that it does not use the open_blas version
+  - netcdf4 ==1.2.4 # netcdf4 1.2.9 py35_0 gave DLL missing error in Windows
   # dedop.ui.analysis only:
   - pyproj
-  - matplotlib
-  - bokeh ==0.12.7 # bokeh 0.12.9 has some changes that make it incompatible with some code in the notebooks
-  - ipywidgets >=6.0.0,<7  # ipywidgets 7 makes it not importable in the notebook.
+  - matplotlib ==2.0.2
+  - bokeh ==0.12.13 # bokeh 0.12.9 has some changes that make it incompatible with some code in the notebooks
+  - ipywidgets ==7.1.1  # ipywidgets 7 makes it not importable in the notebook.
   # the use of jupyter_core v4.4.0 causes post-link issue during the installation in linux
   # possibly related to https://github.com/conda-forge/widgetsnbextension-feedstock/issues/4
-  - jupyter_core ==4.3.0
-  - pyqt
+  - jupyter_core ==4.4.0
+  - pyqt ==5.6.0
   # mkl 2017.0.3 on windows breaks the installer
   # https://github.com/conda/constructor/issues/92
   # pin to 2017.0.1 for time being
-  - mkl 2017.0.1
-  - krb5 1.14.2 # to fix DLL missing error while importing netCDF4 in Windows
+  - mkl ==2018.0.1
+  - krb5 ==1.14.2 # to fix DLL missing error while importing netCDF4 in Windows
 
 license_file: ../LICENSE
 
