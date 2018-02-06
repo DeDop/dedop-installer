@@ -2,7 +2,7 @@ language: node_js
 
 env:
   global:
-    - CONDA_PY=3.5
+    - CONDA_PY=3.6
     #  the following key was generated in 2 steps based on the example here https://github.com/quantopian/zipline/blob/master/.travis.yml
     - FTP_USER=dedop
     - FTP_HOST=ftp.brockmann-consult.de
@@ -36,9 +36,7 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  # use older version of constructor because the new one (eg. v2.x.x) requires it to be installed on conda root env
-  # This in turn created a problem in travis linux build when downgrading root env to use python 3.5.
-  - conda create -q -n constructor-environment python=$CONDA_PY constructor=1.5.5
+  - conda create -q -n constructor-environment python=$CONDA_PY constructor
   - git clone https://github.com/DeDop/dedop-studio.git
   - cd dedop-studio
   - npm install
