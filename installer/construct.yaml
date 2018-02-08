@@ -10,28 +10,8 @@ channels:
 
 specs:
   - python ==3.6.4
-  - cate-util 1.0.0.dev1 py36_0 # need to be modified to using '>' or '<' after there is an official release of this lib
   - dedop 1.4.0.dev1 py36_0
   - conda
-#  - jupyter ==1.0.0
-#  - numpy 1.11.3 # so that it does not use the open_blas version, which does not work in MacOS
-#  - numexpr
-#  - scipy ==1.0.0  # so that it does not use the open_blas version
-#  - netcdf4 ==1.2.4 # netcdf4 1.2.9 py35_0 gave DLL missing error in Windows
-  # dedop.ui.analysis only:
-#  - pyproj
-#  - matplotlib ==2.0.2
-#  - bokeh ==0.12.13 # bokeh 0.12.9 has some changes that make it incompatible with some code in the notebooks
-#  - ipywidgets ==7.1.1  # ipywidgets 7 makes it not importable in the notebook.
-  # the use of jupyter_core v4.4.0 causes post-link issue during the installation in linux
-  # possibly related to https://github.com/conda-forge/widgetsnbextension-feedstock/issues/4
-#  - jupyter_core ==4.4.0
-#  - pyqt ==5.6.0
-  # mkl 2017.0.3 on windows breaks the installer
-  # https://github.com/conda/constructor/issues/92
-  # pin to 2017.0.1 for time being
-#  - mkl ==2018.0.1
-#  - krb5 ==1.14.2 # to fix DLL missing error while importing netCDF4 in Windows
 
 license_file: ../LICENSE
 
