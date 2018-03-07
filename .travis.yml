@@ -4,8 +4,6 @@ env:
   global:
     - CONDA_PY=3.6
     #  the following key was generated in 2 steps based on the example here https://github.com/quantopian/zipline/blob/master/.travis.yml
-    - FTP_USER=dedop
-    - FTP_HOST=ftp.brockmann-consult.de
     # FTP_PASSWORD
     - secure: "ZepfyeWX4bzwIulQiNCKVg1QOc7j2/V79n3qm+beXi3f2N8meg+sz8CXl4PzEcC76l+aMerluDFZTx1HYJlmEV+HZCvV6lygldTaBRb1UDjMPt4nUTviZd+qT8RZg6HYkRRlSfdDro3RPSQvztPndvrU+ftFah1eb7qQutMLMiasyJV2GYH12atU+QNKtg86b7DtFQN5gPeELQLbuAlWO8t+5b3zAQtZtXOxqca/r8Ytzs+qemQF6dt9pqvz+vns7X5UO9pUU+qcGxE1wv6u3hMiIyUiG7r6sY35Bi5GFhxYYk4lD6V6GNbaxL294w87SHHDyOr29bP6pcE04zNh7pbW7ynPuF3duWJPFLF9DLC7YIdEtUP251yEhSNuXQHZSS897DXPP0gO/IZ2h6RKVEgaj6RAPlRmjzln0Cp5UtytOfS5STgNCwBcst0CVXE/chD0QJQM/Yyyv1vjV8ReADBS4xa29lhQ4y6MFY1pMr+fXDiwRqq0paA4X8fiEStPIV9+OqaEeY/vB3gNMMIL1jvTlB7lqGobr69G1dOIt6fvLw3rmUAUUXVVbnpYFQfnCHZwnUQbWvRbXr5/eADhkEwNLgHJ9RbThEfTprNOSjFDTg3v0RBkww8x4cpK/EEbXGjHW0cTTnWSPRbanXwuhm8rzOHd4xhmyaqoTunOrVE="
 
@@ -19,9 +17,6 @@ node_js:
 cache:
   directories:
     - node_modules
-
-before_install:
- - chmod +x upload-to-ftp.sh
 
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -45,13 +40,7 @@ install:
 script:
   - source activate constructor-environment
   - constructor installer
-  - CONDA_INSTALLER_FILE="DeDop-*.sh"
   - cd dedop-studio
   - npm run clean
   - npm run compile
   - npm run publish
-  - cd $TRAVIS_BUILD_DIR
-
-after_success:
-  - ls -l;
-  - ./upload-to-ftp.sh;
