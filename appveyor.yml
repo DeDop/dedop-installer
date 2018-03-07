@@ -30,7 +30,9 @@ build_script:
   # bundled installer not yet used
   #- ps: cp $CONDA_INSTALLER_FILE dedop-studio\app
   - cmd: cd dedop-studio
-  - cmd: npm run dist
+  - cmd: npm run clean
+  - cmd: npm run compile
+  - cmd: npm run publish
   - ps: ls $APPVEYOR_BUILD_FOLDER
   - ps: echo $APPVEYOR_BUILD_FOLDER
   - ps: cd ..

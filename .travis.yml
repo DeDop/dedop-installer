@@ -47,7 +47,9 @@ script:
   - constructor installer
   - CONDA_INSTALLER_FILE="DeDop-*.sh"
   - cd dedop-studio
-  - npm run dist
+  - npm run clean
+  - npm run compile
+  - npm run publish
   - cd $TRAVIS_BUILD_DIR
 
 after_success:
