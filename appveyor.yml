@@ -31,11 +31,11 @@ build_script:
   - cmd: npm run clean
   - cmd: npm run compile
   - cmd: npm run publish
-  - ps: ls $APPVEYOR_BUILD_FOLDER
-  - ps: echo $APPVEYOR_BUILD_FOLDER
   - ps: cd ..
 
 after_build:
+  - ps: pwd
+  - ps: ls
   - ps: cp $CONDA_INSTALLER_FILE win64
 
 artifacts:
