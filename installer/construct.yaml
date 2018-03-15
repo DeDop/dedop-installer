@@ -1,4 +1,4 @@
-# version 1.4.0, b10
+# version 1.4.0, b11
 name: DeDop-core
 version: 1.4.0
 
@@ -7,7 +7,10 @@ channels:
   - http://repo.continuum.io/pkgs/free/
   - https://conda.anaconda.org/ccitools
   - https://conda.anaconda.org/dedop
-  - https://conda.anaconda.org/anaconda
+
+conda_default_channels:
+  - http://conda.anaconda.org/conda-forge
+  - http://repo.continuum.io/pkgs/free
 
 specs:
   - python ==3.6.4
