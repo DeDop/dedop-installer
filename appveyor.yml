@@ -30,3 +30,22 @@ build_script:
   - cmd: npm run clean
   - cmd: npm run compile
   - cmd: npm run publish
+  - ps: ls $APPVEYOR_BUILD_FOLDER
+  - ps: echo $APPVEYOR_BUILD_FOLDER
+  - ps: cd ..
+
+after_build:
+  - ps: cp $CONDA_INSTALLER_FILE win64
+
+artifacts:
+  - path: 'win64\DeDop*.exe'
+    name: dedop-conda-installer-exe
+
+deploy:
+  - provider: FTP
+    protocol: ftp
+    host: ftp.brockmann-consult.de
+    username: dedop
+    password:
+      secure: GL7E4cOZi9mzFvaDMAVOaQ==
+    debug: true
