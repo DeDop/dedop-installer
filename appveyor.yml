@@ -47,4 +47,6 @@ deploy:
     protocol: ftp
     host: ftp.brockmann-consult.de
     username: dedop
+    password:
+      secure: kD4Qu/BtXXGQoAOBE6Rraw==
     debug: true
