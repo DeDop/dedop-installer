@@ -1,4 +1,4 @@
-# version 1.4.0, b12
+# version 1.4.0, b13
 name: DeDop-core
 version: 1.4.0
 
@@ -17,6 +17,7 @@ specs:
   - python ==3.6.4
   - dedop 1.4.0 py36_0
   - conda
+  - tornado ==4.5.3   # somehow dedop-webapi cannot start with tornado 5
 
 license_file: ../LICENSE
 
