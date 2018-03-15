@@ -45,6 +45,7 @@ deploy:
   - provider: FTP
     protocol: ftp
     host: ftp.brockmann-consult.de
+    folder: win64
     username: dedop
     password:
       secure: kD4Qu/BtXXGQoAOBE6Rraw==
