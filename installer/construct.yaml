@@ -1,6 +1,6 @@
-# version 1.4.0.dev1, b7
+# version 1.4.0, b1
 name: DeDop-core
-version: 1.4.0.dev1
+version: 1.4.0
 
 channels:
   - http://conda.anaconda.org/conda-forge
@@ -11,7 +11,7 @@ channels:
 
 specs:
   - python ==3.6.4
-  - dedop 1.4.0.dev1 py36_0
+  - dedop 1.4.0 py36_0
   - conda
 
 license_file: ../LICENSE
