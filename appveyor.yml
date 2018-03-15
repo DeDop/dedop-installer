@@ -34,12 +34,11 @@ build_script:
   - ps: cd ..
 
 after_build:
-  - ps: pwd
   - ps: ls
   - ps: cp $CONDA_INSTALLER_FILE win64
 
 artifacts:
-  - path: 'win64\DeDop*.exe'
+  - path: 'DeDop*.exe'
     name: dedop-conda-installer-exe
 
 deploy:
