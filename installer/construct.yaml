@@ -1,6 +1,6 @@
-# version 1.4.0, b13
+# version 1.5.0, b1
 name: DeDop-core
-version: 1.4.0
+version: 1.5.0
 
 channels:
   - http://conda.anaconda.org/conda-forge
@@ -15,7 +15,7 @@ conda_default_channels:
 
 specs:
   - python ==3.6.4
-  - dedop 1.4.0 py36_0
+  - dedop 1.5.0 py36_0
   - conda
   - tornado ==4.5.3   # somehow dedop-webapi cannot start with tornado 5
 
